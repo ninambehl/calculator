@@ -23,7 +23,9 @@ if operation != "^":
         s.text(str(n1) + " " + operation + " " + str(n2) + " = " + str(n1 * n2))
     elif operation == "/":
         if n2 != 0:
-            s.text(str(n1) + " " + operation + " " + str(n2) + " = " + str(n1 / n2))
+            answer = n1 / n2
+            rounded_num = round(answer, 2)
+            s.text(str(n1) + " " + operation + " " + str(n2) + " = " + str(rounded_num))
         else:
             s.text("The answer is undefined")
     elif operation == "+":
