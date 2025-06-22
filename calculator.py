@@ -16,19 +16,23 @@ s.text("Welcome to the calculator! To get started, follow the instructions below
 #     return x^2
 
 n1 = s.number_input("Enter first number: ")
-operation = s.selectbox("Pick your operation", ["x", "/", "+", "-", "^"])
+operation = s.selectbox("Pick your operation", ["x", "/", "+", "-", "^", "%", "//"])
 if operation != "^":
     n2 = s.number_input("Enter second number: ")
     if operation == "x":
-        s.text("The answer is " + str(n1*n2) + ".")
+        s.text(str(n1) + " " + operation + " " + n2 + " = " + str(n1 * n2))
     elif operation == "/":
         if n2 != 0:
-            s.text("The answer is " + str(n1 / n2) + ".")
+            s.text(str(n1) + " " + operation + " " + n2 + " = " + str(n1 / n2))
         else:
             s.text("The answer is undefined")
     elif operation == "+":
-        s.text("The answer is " + str(n1 + n2) + ".")
+        s.text(str(n1) + " " + operation + " " + n2 + " = " + str(n1 + n2))
+    elif operation == "%":
+        s.text(str(n1) + " " + operation + " " + str(n2) + " = " + str(n1 % n2))
+    elif operation == "//":
+        s.text(str(n1) + " " + operation + " " + n2 + " = " + str(n1 // n2))
     else:
-        s.text("The answer is " + str(n1 - n2) + ".")
+        s.text(str(n1) + " " + operation + " " + n2 + " = " + str(n1 - n2))
 else:
-    s.text("The answer is " + str(n1**2) + ".")
+    s.text(n1 + " " + operation + " 2 =" + str(n1**2))
